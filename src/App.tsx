@@ -37,7 +37,7 @@ const App = () => (
           </button>
         </div>
       </form>
-      <RecordCard amount={500} description="All cafe" transactionType="expense" />
+      <RecordCard amount={500} description="Expense" transactionType="expense" />
       <RecordCard amount={500} description="Income" transactionType="income" />
       <RecordCard amount={500} description="Income" transactionType="income" />
       <RecordCard amount={500} description="Income" transactionType="income" />
