@@ -7,7 +7,7 @@ import { TwStyle } from 'twin.macro'
 declare module 'twin.macro' {
   // The styled and css imports
   const styled: typeof styledImport
-  const css: typeof cssImport
+  const css: (tag: CSSAttribute  | TemplateStringsArray | string | TwStyle[], ...props: (string | number)[] ) => string
 }
 
 declare module 'react' {
