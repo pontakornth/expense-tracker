@@ -4,12 +4,12 @@ import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
 const CustomStyles = createGlobalStyles`
 	html, body {
-    height: 100%;
+    min-height: 100%;
 		-webkit-tap-highlight-color: ${theme`colors.green.500`};
     ${tw`antialiased bg-blue-100`}
 	}
   #root {
-    height: 100%;
+    min-height: 100%;
   }
 `
 
