@@ -10,7 +10,7 @@ interface RecordCardProps {
 
 const RecordCard = (props: RecordCardProps) => {
     return (
-        <div className={css(tw`border p-8 rounded bg-white align-baseline flex-wrap flex`)}>
+        <div className={css(tw`border p-8 rounded shadow-md bg-white align-baseline flex-wrap flex`)}>
             <p className={css([tw`font-bold capitalize flex-1`, props.transactionType == 'expense' ? tw`text-red-500` : tw`text-green-500`])}>
                 {props.transactionType}
             </p>
