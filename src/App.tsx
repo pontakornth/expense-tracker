@@ -1,6 +1,7 @@
 import React, { ChangeEvent, MouseEvent, useReducer } from 'react'
 import tw, { css } from 'twin.macro'
 import {styled} from "goober"
+import { nanoid } from "nanoid"
 import RecordCard, { RecordCardProps } from "./components/RecordCard"
 import RecordForm from "./components/RecordForm"
 
@@ -10,7 +11,7 @@ interface AppState {
   currentTransactionType: 'expense' | 'income';
   currentAmount: number;
   currentDescription: string;
-  transactions: RecordCardProps[]
+  transactions: (RecordCardProps & {id: string})[]
 
 }
 
@@ -32,7 +33,8 @@ function reducer(state: AppState, action: Action): AppState {
       return {...state, transactions: [...state.transactions, {
         amount: state.currentAmount,
         transactionType: state.currentTransactionType,
-        description: state.currentDescription
+        description: state.currentDescription,
+        id: nanoid()
       }]}
   }
 }
@@ -75,7 +77,7 @@ const App = () => {
         amount={t.amount} 
         description={t.description} 
         transactionType={t.transactionType}
-        key={t}
+        key={t.id}
         />
       ))}
     </Container>
