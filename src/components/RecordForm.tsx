@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react'
+import React, { ChangeEventHandler, MouseEventHandler } from 'react'
 import tw, { css, styled } from 'twin.macro'
 
 const GroupedInput = styled('div')(tw`mr-4 inline-block`)
@@ -13,6 +13,7 @@ interface RecordFormProps {
     handleAmountChange: ChangeEventHandler<HTMLInputElement>;
     description: string;
     handleDescriptionChange: ChangeEventHandler<HTMLInputElement>;
+    handleSubmit: MouseEventHandler<HTMLButtonElement>;
 }
 
 const RecordForm = (props: RecordFormProps) => {
@@ -38,7 +39,7 @@ const RecordForm = (props: RecordFormProps) => {
           <input name="description" onChange={props.handleDescriptionChange} value={props.description} type="text" className={css(tw`p-2 border rounded`)} />
         </FormInputBox>
         <div className={css(tw`w-full text-center md:text-right w-full py-2`)}>
-          <button className={css(tw`p-2 bg-blue-400 rounded shadow-md border hover:bg-blue-300 text-white`)}>
+          <button onClick={props.handleSubmit} className={css(tw`p-2 bg-blue-400 rounded shadow-md border hover:bg-blue-300 text-white`)}>
             Add transaction
           </button>
         </div>

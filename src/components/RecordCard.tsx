@@ -1,7 +1,7 @@
 import React from 'react'
 import tw, { css } from 'twin.macro'
 
-interface RecordCardProps {
+export interface RecordCardProps {
     amount: number;
     transactionType: 'expense' | 'income';
     description: string;
