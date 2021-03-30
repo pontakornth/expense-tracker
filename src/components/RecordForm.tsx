@@ -9,7 +9,7 @@ const FormInputBox = styled('div')(tw`w-full md:w-1/2 py-2 text-right`)
 interface RecordFormProps {
     transactionType: 'expense' | 'income';
     handleTransactionTypeChange: ChangeEventHandler<HTMLInputElement>;
-    amount: number;
+    amount: string;
     handleAmountChange: ChangeEventHandler<HTMLInputElement>;
     description: string;
     handleDescriptionChange: ChangeEventHandler<HTMLInputElement>;
